@@ -1,0 +1,37 @@
+石头剪刀布功能设计1.0
+
+   玩家类功能设计
+      玩家可自主选择出拳类型
+	类型包括  剪刀  石头 布
+	功能有按钮点击实现
+   电脑类功能设计
+      电脑类随机出拳
+   裁判类功能设计
+      裁判类对玩家出拳和电脑出拳进行比较
+           比较方法： 
+                 case "石头": return 1;
+                case "剪刀": return 2;
+                case "布": return 3;
+                default: return 0;   
+
+
+               public enum RESULT
+        {
+            玩家赢,
+            电脑赢,
+            平手
+        }
+         int result = playerNum - computerNum;
+            if (result == -1 || result == 2)
+            {
+                return RESULT.玩家赢;
+            }
+            else if (result == 0)
+            {
+                return RESULT.平手;
+
+            }
+            else
+            {
+                return RESULT.电脑赢;
+            }
